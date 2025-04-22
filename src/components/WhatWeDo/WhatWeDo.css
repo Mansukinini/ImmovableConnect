@@ -1,0 +1,15 @@
+.what-we-do-container {
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.what-we-do-left {
+    flex-basis: 40%;
+}
+
+.what-we-do-right {
+    flex-basis: 56%;
+}
