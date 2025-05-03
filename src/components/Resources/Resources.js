@@ -3,11 +3,10 @@ import Card from '../Cards'
 
 function Resources() {
     return (
-        <div>
-            <h1>Resources</h1>
+        <div className='resources-container'>
             <Card/>
         </div>
-    )
+    );
 }
 
 export default Resources

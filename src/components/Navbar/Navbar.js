@@ -40,12 +40,12 @@ export default function Navbar() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="what-we-do-container" smooth={true} offset={-150} duration={500}> 
+                    <Link to="what-we-do-container" smooth={true} offset={-220} duration={500}> 
                         What we do
                     </Link>
                 </li>
                 <li>
-                    <Link to="aboutUs" smooth={true} offset={-200} duration={500}>
+                    <Link to="aboutUs" smooth={true} offset={-180} duration={500}>
                         About us
                     </Link>
                 </li>
@@ -62,7 +62,7 @@ export default function Navbar() {
                     </Link>
                 </li> */}
                 <li>
-                    <Link to="resources-container" smooth={true} offset={-220} duration={500}>
+                    <Link to="resources-container" smooth={true} offset={-150} duration={500}>
                         Resources
                     </Link>
                 </li>
