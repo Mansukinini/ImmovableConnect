@@ -49,18 +49,6 @@ export default function Navbar() {
                         About us
                     </Link>
                 </li>
-                {/* <li>Get Involved</li>
-                <li>Weekley Meetings</li> */}
-                {/* <li className="nav-item"> className={click ? "nav-menu active" : "nav-menu"}
-                    <Link to="weekley-meetings" className="nav-links" onClick={closeMobileMenu}>
-                        Weekley Meetings
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/aboutUs" className="nav-links" onClick={closeMobileMenu}>
-                        Get Involved
-                    </Link>
-                </li> */}
                 <li>
                     <Link to="resources-container" smooth={true} offset={-150} duration={500}>
                         Resources
@@ -71,6 +59,11 @@ export default function Navbar() {
                         <button className="btn">Contact us</button>
                     </Link>
                 </li>
+                {/* <li>
+                    <Link to="contact-us" smooth={true} offset={-250} duration={500}>
+                        <button className="btn">Login</button>
+                    </Link>
+                </li> */}
 
                 {/* <li className="nav-item">
                     <Link to="/contactUs" className="nav-links" onClick={closeMobileMenu}>
