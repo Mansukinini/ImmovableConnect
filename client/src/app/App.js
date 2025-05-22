@@ -19,11 +19,11 @@ function App() {
                 <Title title='What we do'/>
                 <WhatWeDo/>
                 <Title title='About Us'/>
-                <AboutUs/>
-                <Title title='Resource'/>
-                <Resources/>                
+                <AboutUs/>                
                 <Title title='Contact us'/>
-                <ContactUs/> 
+                <ContactUs/>
+                <Title title='Resource'/>
+                <Resources/> 
             </div>
             <Footer/>
         </div>

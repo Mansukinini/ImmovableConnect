@@ -50,20 +50,20 @@ export default function Navbar() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="resources-container" smooth={true} offset={-150} duration={500}>
-                        Resources
+                    <Link to="contact-us" smooth={true} offset={-250} duration={500}>
+                        Contact us
                     </Link>
                 </li>
                 <li>
-                    <Link to="contact-us" smooth={true} offset={-250} duration={500}>
-                        <button className="btn">Contact us</button>
+                    <Link to="resources-container" smooth={true} offset={-150} duration={500}>
+                        Resources
                     </Link>
-                </li>
-                {/* <li>
+                </li>                
+                <li>
                     <Link to="contact-us" smooth={true} offset={-250} duration={500}>
                         <button className="btn">Login</button>
                     </Link>
-                </li> */}
+                </li>
 
                 {/* <li className="nav-item">
                     <Link to="/contactUs" className="nav-links" onClick={closeMobileMenu}>

@@ -6,7 +6,7 @@ function WhatWeDo() {
         <>
             <div className='what-we-do-container'>
                 <div className='what-we-do-left'>
-                    <img src='../../../public/images/img-8.jpg' alt='What We Do'/>
+                    <img src='../../../public/images/whatwedo.jpeg' alt='What We Do'/>
                 </div>
                 <div className='what-we-do-right'>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has 
