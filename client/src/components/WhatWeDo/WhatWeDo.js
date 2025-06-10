@@ -18,9 +18,9 @@ function WhatWeDo() {
                         including versions of Lorem Ipsum.</p>
                 </div>
             </div>  
-            <div className="weekly-meeting-container">
+            {/* <div className="weekly-meeting-container">
                 <h2>Weekly Meetings</h2>
-            </div>
+            </div> */}
         </>        
     );
 }
