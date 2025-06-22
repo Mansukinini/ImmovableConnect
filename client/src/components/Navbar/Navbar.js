@@ -54,11 +54,11 @@ export default function Navbar() {
                         Contact us
                     </Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link to="resources-container" smooth={true} offset={-150} duration={500}>
                         Resources
                     </Link>
-                </li>                
+                </li> */}
                 <li>
                     <Link to="contact-us" smooth={true} offset={-250} duration={500}>
                         <button className="btn">Login</button>
