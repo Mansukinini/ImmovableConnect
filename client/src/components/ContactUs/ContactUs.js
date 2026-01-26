@@ -12,8 +12,8 @@ function ContactUs() {
                     in our faith.
                 </p>
                 <ul className='contact-us-list'>
-                    <li>test@gmail.com</li>
-                    <li>+27 617191425</li>
+                    <li>Immovablesc@immovablesconnect.com</li>
+                    <li>+27 79 252 7725</li>
                     <li>Cape Town (Online)</li>
                 </ul>
             </div>
