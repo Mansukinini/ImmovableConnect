@@ -59,11 +59,11 @@ export default function Navbar() {
                         Resources
                     </Link>
                 </li> */}
-                <li>
+                {/* <li>
                     <Link to="contact-us" smooth={true} offset={-250} duration={500}>
                         <button className="btn">Login</button>
                     </Link>
-                </li>
+                </li> */}
 
                 {/* <li className="nav-item">
                     <Link to="/contactUs" className="nav-links" onClick={closeMobileMenu}>
