@@ -1,5 +1,10 @@
-./node_modules
-./dist
-./env
+node_modules
+dist
+.env
+.vscode
+.DS_Store
+client/.env
+client/.vscode
+client/.DS_Store
 client/node_modules
 client/dist

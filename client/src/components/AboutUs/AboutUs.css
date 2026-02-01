@@ -1,0 +1,43 @@
+.about-us-container {
+    display: flex;
+}
+
+.what-we-are-right {
+    margin-bottom: 30px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 365px;
+    margin: 20px auto;
+    padding: 10px;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    border-radius: 10px;
+    color: #676767;
+}
+
+/* .card-header {
+    width: 300px;
+    margin: auto 20px;
+    padding: 10px;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    border-radius: 10px;
+    color: #676767;
+} */
+
+.card-header > img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}

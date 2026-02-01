@@ -1,0 +1,31 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "Immovable Connect Cell Group COKG",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Visi Mansukinini",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "mssql": "^11.0.1",
+    "nodemon": "^3.1.10",
+    "passport": "^0.7.0",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.16.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
