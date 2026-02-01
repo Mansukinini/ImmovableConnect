@@ -1,13 +1,23 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-    mode: "development",
-    entry: path.resolve(__dirname, "src", "app", "index.js"), // Updated path
+    mode: process.env.NODE_ENV || "development",
+    entry: path.resolve(__dirname, "src", "app", "index.js"),
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "./dist/bundle.js",
+        filename: "bundle.js",
         publicPath: "/",
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, "index.html"),
+        }),
+        new CopyPlugin({
+            patterns: [{ from: "public", to: "public" }],
+        }),
+    ],
     resolve: {
         extensions: [".js", ".jsx"],
     },
