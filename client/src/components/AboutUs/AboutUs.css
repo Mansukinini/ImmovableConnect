@@ -37,7 +37,29 @@
 } */
 
 .card-header > img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+}
+
+/* ---------------- media query ------------------------- */
+@media (max-width: 850px) {
+    .card-text {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .card-container {
+        flex-direction: column;
+    }
+
+    .card-header>img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .card-text {
+        font-size: 12px;
+    }
 }

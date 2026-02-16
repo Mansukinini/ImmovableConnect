@@ -22,7 +22,7 @@ async function connectToSQL() {
   }
 }
 
-connectToSQL();
+// connectToSQL();
 const app = express()
 const port = 3000
 

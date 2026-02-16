@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ContactUs.css';
 
 function ContactUs() {
+    
     return (
         <div className='contact-us'>
             <div className='contact-us-col'>
@@ -18,15 +19,17 @@ function ContactUs() {
                 </ul>
             </div>
             <div className='contact-us-col'>
-                <form>
+                {/* <form onSubmit={onSubmit} className='contact-us-form'> */}
+                <form className='contact-us-form'>
                     <label>Your name</label>
-                    <input type="text" id="name" name="name" placeholder='Type your name...' required/>
+                    <input type="text" id="name" name="name" placeholder='Type your name...' required />
                     <label >Phone number</label>
-                    <input type="tel" name="phone" placeholder='Type your mobile number...' required/>
-                    <label >Write your message here</label>                    
+                    <input type="tel" name="phone" placeholder='Type your mobile number...' required />
+                    <label >Write your message here</label>
                     <textarea id="message" name="message" rows='6' placeholder='Type your message here...' required></textarea>
                     <button type="submit" className='btn dark-btn'>Submit now</button>
                 </form>
+                {/* <span className='result'>{result}</span> */}
             </div>
         </div>
     );

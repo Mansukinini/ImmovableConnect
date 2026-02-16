@@ -28,12 +28,17 @@ export default function Navbar() {
         });
     }, []);   
 
+    const [ mobileMenu, setMobileMenu ] = useState(false);
+    const toggleMenu = () => {
+        mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
+    }
+
     window.addEventListener("resize", showButton);
 
     return (
         <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
             <img className="logo" src="../../../../../public/images/icon.png" alt="Avatar"/>
-            <ul>
+            <ul className={ mobileMenu ? '' : 'hide-mobile-menu' }>
                 <li>
                     <Link to="hero" smooth={true} offset={0} duration={500}>
                         Home
@@ -71,6 +76,8 @@ export default function Navbar() {
                     </Link>
                 </li> */}
             </ul>
+            {/* <image src={menu_icon} alt="" className="menu-icon" onClick={toggleMenu}></image> */}
+            {/* Add Menu items className='menu-icon' */}
         </nav>	
     );
 }
