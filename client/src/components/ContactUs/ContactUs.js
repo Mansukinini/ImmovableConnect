@@ -12,11 +12,13 @@ function ContactUs() {
                     important to us as we strive to help you for us to grow together
                     in our faith.
                 </p>
-                <ul className='contact-us-list'>
-                    <li>Immovablesc@immovablesconnect.com</li>
-                    <li>+27 79 252 7725</li>
-                    <li>Cape Town (Online)</li>
-                </ul>
+                <div>
+                    <ul className='contact-us-list'>
+                        <li>Immovablesc@immovablesconnect.com</li>
+                        <li>+27 79 252 7725</li>
+                        <li>Cape Town (Online)</li>
+                    </ul>
+                </div>
             </div>
             <div className='contact-us-col'>
                 {/* <form onSubmit={onSubmit} className='contact-us-form'> */}

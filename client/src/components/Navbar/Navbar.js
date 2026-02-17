@@ -76,7 +76,7 @@ export default function Navbar() {
                     </Link>
                 </li> */}
             </ul>
-            {/* <image src={menu_icon} alt="" className="menu-icon" onClick={toggleMenu}></image> */}
+            <img src="../../../../../public/images/menu-icon.png" alt="" className="menu-icon" onClick={toggleMenu}></img>
             {/* Add Menu items className='menu-icon' */}
         </nav>	
     );
