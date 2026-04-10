@@ -2,7 +2,23 @@ import React, { useState } from 'react';
 import './ContactUs.css';
 
 function ContactUs() {
-    
+    const [result, setResult] = useState("");
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        formData.append(process.env.ACCESS_KEY, process.env.ACCESS_KEY_PASSWORD);
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+        setResult(data.success ? "Success!" : "Error");
+    };
+
     return (
         <div className='contact-us'>
             <div className='contact-us-col'>
@@ -19,10 +35,9 @@ function ContactUs() {
                         <li>Cape Town (Online)</li>
                     </ul>
                 </div>
-            </div>
-            <div className='contact-us-col'>
-                {/* <form onSubmit={onSubmit} className='contact-us-form'> */}
-                <form className='contact-us-form'>
+                </div>
+                <div className='contact-us-col'>
+                <form className='contact-us-form' onSubmit={onSubmit} method="POST">
                     <label>Your name</label>
                     <input type="text" id="name" name="name" placeholder='Type your name...' required />
                     <label >Phone number</label>

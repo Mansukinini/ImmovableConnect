@@ -1,39 +1,29 @@
 import express from 'express';
-import mssql from 'mssql';
+import connectDB from './config/db.js';
+import authRoutes from './routes/api/auth.js';
+import profileRoutes from './routes/api/profile.js';
+import postsRoutes from './routes/api/posts.js';
+import userRoutes from './routes/api/user.js';
 
-const config = {
-  user: 'sa',
-  password: 'Aspire1234!@#$',
-  server: 'localhost', // You can use 'localhost' or an IP address
-  database: 'TestDB',
-  options: {
-    // This is often required for local development with self-signed certificates
-    trustServerCertificate: true, 
-  }
-};
+connectDB();
 
-async function connectToSQL() {
-  try {
-    await mssql.connect(config);
-    console.log('Connected to SQL Server! ✅');
-    // You can now execute queries or other database operations here
-  } catch (err) {
-    console.error('Database connection failed:', err);
-  }
-}
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-// connectToSQL();
-const app = express()
-const port = 3000
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+// Routes
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.get('/login', (req, res) => {
-  res.send('Hello World!');
-});
+app.use('/api/auth', authRoutes);
+app.use('/api/profile', profileRoutes);
+app.use('/api/posts', postsRoutes);
+app.use('/api/user', userRoutes);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });

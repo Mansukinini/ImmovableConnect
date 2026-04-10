@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
-import HeroSection from "../components/Hero/HeroSection";
+import Navbar from "../components/navbar/Navbar";
+import HeroSection from "../components/hero/HeroSection";
 import Title from "../components/Title/Title";
 import WhatWeDo from "../components/WhatWeDo/WhatWeDo";
-import AboutUs from "../components/AboutUs/AboutUs";
-import ContactUs from "../components/ContactUs/ContactUs";
+import AboutUs from "../components/about-us/AboutUs";
+import ContactUs from "../components/contact-us/ContactUs";
 import Resources from "../components/Resources/Resources";
-import Footer from "../components/Footer/Footer";
+import Footer from "../components/footer/Footer";
 import './App.css';
 
 function App() {
     return (
-        <div>
+        // <div>
+        <Router>
             <Navbar/>
             <HeroSection/>
             <div className="container">
@@ -26,7 +27,12 @@ function App() {
                 <Resources/>  */}
             </div>
             <Footer/>
-        </div>
+            <Routes>
+
+            </Routes>
+        </Router>
+            
+        // </div>
     );   
 }
 
