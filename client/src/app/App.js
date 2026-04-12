@@ -1,38 +1,43 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "../components/navbar/Navbar";
-import HeroSection from "../components/hero/HeroSection";
-import Title from "../components/Title/Title";
-import WhatWeDo from "../components/WhatWeDo/WhatWeDo";
-import AboutUs from "../components/about-us/AboutUs";
-import ContactUs from "../components/contact-us/ContactUs";
-import Resources from "../components/Resources/Resources";
-import Footer from "../components/footer/Footer";
+import Landing from "../components/layout/Landing";
+import Navbar from "../components/layout/Navbar";
+import Register from "../components/Auth/Register";
+import Login from "../components/Auth/Login";
+import Alert from "../components/layout/Alert";
+import { loadUser } from "../actions/auth";
+import setAuthToken from "../utils/setAuthToken";
 import './App.css';
 
-function App() {
-    return (
-        // <div>
-        <Router>
-            <Navbar/>
-            <HeroSection/>
-            <div className="container">
-                <Title title='What we do'/>
-                <WhatWeDo/>
-                <Title title='About Us'/>
-                <AboutUs/>                
-                <Title title='Contact us'/>
-                <ContactUs/>
-                {/* <Title title='Resource'/>
-                <Resources/>  */}
-            </div>
-            <Footer/>
-            <Routes>
+// Redux
+import { Provider } from "react-redux";
+import store from "../store";
 
-            </Routes>
-        </Router>
-            
-        // </div>
+if (localStorage.token) {
+    setAuthToken(localStorage.token);
+}
+
+function App() {
+    // useEffect(() =>{
+    //     store.dispatch(loadUser());
+    // }, []);
+
+    return (
+        <Provider store={store}>
+            <Router>
+                <Fragment>
+                    <Navbar/>                
+                    {/* <section> */}
+                        <Alert/>
+                        <Routes>
+                            <Route path="/" element={<Landing />} />
+                            <Route path="register" element={<Register />} />
+                            <Route path="login" element={<Login />} />                            
+                        </Routes>
+                    {/* </section>  */}
+                </Fragment>
+            </Router>
+        </Provider>
     );   
 }
 

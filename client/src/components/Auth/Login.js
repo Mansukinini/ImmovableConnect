@@ -1,20 +1,58 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../actions/auth';
 
-export default function Login() {
+const Login = ({ login, isAuthenticated }) => {
+    const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+    });
+
+    const { email, password } = formData;
+
+    const onChange = (e) =>
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        login(email, password);
+    };
+
+    if (isAuthenticated) {
+        return <Navigate to="/dashboard" />;
+    }
+
     return (
-        <div className="login-container">
-            <h2>Login</h2>
-            <form>
+        <section className="container">
+            <h1 className="large text-primary">Sign In</h1>
+            <p className="lead">
+                <i className="fas fa-user" /> Sign Into Your Account
+            </p>
+            <form className="form" onSubmit={onSubmit}>
                 <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" required />
+                    <input type="email" placeholder="Email Address" name="email" value={email} onChange={onChange} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" required />
+                    <input type="password" placeholder="Password" name="password" value={password} onChange={onChange} minLength="6" />
                 </div>
-                <button type="submit">Login</button>
+                <input type="submit" className="btn btn-primary" value="Login" />
             </form>
-        </div>
+            <p className="my-1">
+                Don't have an account? <Link to="/register">Sign Up</Link>
+            </p>
+        </section>
     );
-}
+};
+
+Login.propTypes = {
+    login: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+};
+
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { login })(Login);

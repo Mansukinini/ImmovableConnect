@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link, Element } from 'react-scroll';
-import './Navbar.css';
+import { Link as ScrollLink, Element } from 'react-scroll';
+import { Link as RouterLink, Navigate } from 'react-router-dom';
+import '../../app/App.css';
 
 export default function Navbar() {
     const [ sticky, setSticky ] = useState(false);
@@ -40,40 +41,29 @@ export default function Navbar() {
             <img className="logo" src="../../../../../public/images/icon.png" alt="Avatar"/>
             <ul className={ mobileMenu ? '' : 'hide-mobile-menu' }>
                 <li>
-                    <Link to="hero" smooth={true} offset={0} duration={500}>
+                    <ScrollLink to="hero" smooth={true} offset={0} duration={500}>
                         Home
-                    </Link>
+                    </ScrollLink>
                 </li>
                 <li>
-                    <Link to="what-we-do-container" smooth={true} offset={-220} duration={500}> 
+                    <ScrollLink to="what-we-do-container" smooth={true} offset={-220} duration={500}> 
                         What we do
-                    </Link>
+                    </ScrollLink>
                 </li>
                 <li>
-                    <Link to="aboutUs" smooth={true} offset={-180} duration={500}>
+                    <ScrollLink to="aboutUs" smooth={true} offset={-180} duration={500}>
                         About us
-                    </Link>
+                    </ScrollLink>
                 </li>
                 <li>
-                    <Link to="contact-us" smooth={true} offset={-250} duration={500}>
+                    <ScrollLink to="contact-us" smooth={true} offset={-250} duration={500}>
                         Contact us
-                    </Link>
+                    </ScrollLink>
                 </li>
-                {/* <li>
-                    <Link to="resources-container" smooth={true} offset={-150} duration={500}>
-                        Resources
-                    </Link>
-                </li> */}
-                <li>
-                    <Link to="../auth/Login" smooth={true} offset={-250} duration={500}>
-                        <button className="btn">Login</button>
-                    </Link>
-                </li>
-
-                {/* <li className="nav-item">
-                    <Link to="/contactUs" className="nav-links" onClick={closeMobileMenu}>
-                    Sign Up
-                    </Link>
+                {/* <li>                    
+                    <button className="btn">
+                        <RouterLink to="/login" >Login</RouterLink>
+                    </button>
                 </li> */}
             </ul>
             <img src="../../../../../public/images/menu-icon.png" alt="" className="menu-icon" onClick={toggleMenu}></img>
