@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import connectDB from './config/db.js';
+import connectDB from './db.js';
 import authRoutes from './routes/api/auth.js';
 import profileRoutes from './routes/api/profile.js';
 import postsRoutes from './routes/api/posts.js';
