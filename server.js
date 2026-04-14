@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'node:path'; 
 import connectDB from './data/db.js';
 import authRoutes from './routes/api/auth.js';
 import profileRoutes from './routes/api/profile.js';
@@ -23,8 +24,16 @@ app.use('/api/profile', profileRoutes);
 app.use('/api/posts', postsRoutes);
 app.use('/api/user', userRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/dist'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
+  });
+}
+
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 
 export default app;
