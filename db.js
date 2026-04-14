@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
+import env from "dotenv";
 import config from "config";
+
+env.config();
 
 const db = config.get("mongoURI");
 
 const connectDB = async () => {
     try {
-        // const client = new MongoClient(uri);
-        // await client.connect();
         await mongoose.connect(db);
         console.log("MongoDB Connected! ✅");
     }
