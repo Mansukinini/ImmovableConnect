@@ -4,7 +4,6 @@ import { auth } from '../../middleware/auth.js';
 import bcrypt from 'bcrypt';
 import User from '../../models/User.js';
 import jwt from 'jsonwebtoken';
-import config from 'config'
 
 const router = express.Router();
 
@@ -52,7 +51,7 @@ router.post('/', [
       }
     }
 
-    jwt.sign(payload, config.get('jwtSecret'),
+    jwt.sign(payload, process.env.JWTSECRET,
       { expiresIn: 360000 }, (err, token) => {
         if (err) throw err;
           res.json({ token });
