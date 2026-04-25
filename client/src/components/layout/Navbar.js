@@ -60,11 +60,11 @@ export default function Navbar() {
                         Contact us
                     </ScrollLink>
                 </li>
-                {/* <li>                    
+                <li>                    
                     <button className="btn">
                         <RouterLink to="/login" >Login</RouterLink>
                     </button>
-                </li> */}
+                </li>
             </ul>
             <img src="../../../../../public/images/menu-icon.png" alt="" className="menu-icon" onClick={toggleMenu}></img>
             {/* Add Menu items className='menu-icon' */}

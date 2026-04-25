@@ -7,7 +7,10 @@ import profileRoutes from './routes/api/profile.js';
 import postsRoutes from './routes/api/posts.js';
 import userRoutes from './routes/api/user.js';
 
-connectDB();
+// Only connect to DB when not in serverless mode
+if (process.env.VERCEL === undefined) {
+  connectDB();
+}
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,7 +19,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: 'http://localhost:8081'
+  origin: '*' // Allow all origins in production
 }));
 
 app.use('/api/auth', authRoutes);
@@ -30,11 +33,28 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/dist'));
 
   app.get('/:path(.*)', (req, res) => {
-    // res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
-    res.send('Server is running, but no specific route matched.');
+    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
   });
 }
 
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+// Vercel serverless handler
+export default function handler(req, res) {
+  // Handle API routes
+  if (req.url.startsWith('/api/')) {
+    return app(req, res);
+  }
+  
+  // Handle static files
+  if (process.env.NODE_ENV === 'production') {
+    return express.static('client/dist')(req, res, () => {
+      res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
+    });
+  }
+  
+  res.status(404).json({ message: 'Not found' });
+}
 
-export default app;
+// For local development
+if (process.env.VERCEL === undefined) {
+  app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+}
