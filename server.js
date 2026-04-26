@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import path from 'node:path'; 
+import path from 'node:path';
 import connectDB from './data/db.js';
 import authRoutes from './routes/api/auth.js';
 import profileRoutes from './routes/api/profile.js';
@@ -29,29 +29,20 @@ app.use('/api/user', userRoutes);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
-  // Set static folder
   app.use(express.static('client/dist'));
-
+  
   app.get('/:path(.*)', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
   });
 }
 
-// Vercel serverless handler
-export default function handler(req, res) {
-  // Handle API routes
-  if (req.url.startsWith('/api/')) {
-    return app(req, res);
-  }
+// Vercel serverless handler - wrap Express app
+export default async function handler(req, res) {
+  // Set proper headers for JSON
+  res.setHeader('Content-Type', 'application/json');
   
-  // Handle static files
-  if (process.env.NODE_ENV === 'production') {
-    return express.static('client/dist')(req, res, () => {
-      res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
-    });
-  }
-  
-  res.status(404).json({ message: 'Not found' });
+  // Use express as request handler
+  return app(req, res);
 }
 
 // For local development
