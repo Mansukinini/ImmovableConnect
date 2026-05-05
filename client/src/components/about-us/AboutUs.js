@@ -46,7 +46,7 @@ function AboutUs() {
     ];
 
     return (
-        <section style={{ margin: '0 auto' }}>
+        <section style={{ maxWidth: '1100px', margin: '0 auto' }}>
             {cardsData.map((card) => (
                 <div key={card.id} className="card">
                     <div className="card-header">

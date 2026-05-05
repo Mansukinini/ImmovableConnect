@@ -4,7 +4,7 @@ import './WhatWeDo.css'
 function WhatWeDo() {
     return (
         <>
-            <div className='what-we-do-container'>
+            <div className='what-we-do-container' style={{ maxWidth: '1100px', margin: '0 auto' }}>
                 <div>
                     <span>Immovables Connect is an online Connect/Cell Community convening weekly from 8-9pm via 
                         GoogleMeet.  It is a community of young people and young adults who's passion lies in 

@@ -10,14 +10,12 @@ export default function Landing() {
     return (
         <section className="landing">
             <HeroSection/>
-            <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-                <Title title='What we do'/>
-                <WhatWeDo/>
-                <Title title='About Us'/>
-                <AboutUs/>                
-                <Title title='Contact us'/>
-                <ContactUs/>
-            </div>
+            <Title title='What we do'/>
+            <WhatWeDo/>
+            <Title title='About Us'/>
+            <AboutUs/>                
+            <Title title='Contact us'/>
+            <ContactUs/>
             <Footer/>        
         </section>
     );

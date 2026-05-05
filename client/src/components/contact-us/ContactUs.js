@@ -20,7 +20,7 @@ function ContactUs() {
     };
 
     return (
-        <div className='contact-us'>
+        <div className='contact-us' style={{ maxWidth: '1100px', margin: '0 auto' }}>
             <div className='contact-us-col'>
                 <h3>Send us a message</h3>
                 <p>Feel free to reach out through contact from or find our contact
