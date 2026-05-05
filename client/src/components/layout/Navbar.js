@@ -66,8 +66,7 @@ export default function Navbar() {
                     </button>
                 </li>
             </ul>
-            <img src="../../../../../public/images/menu-icon.png" alt="" className="menu-icon" onClick={toggleMenu}></img>
-            {/* Add Menu items className='menu-icon' */}
+            <img src="../../../../../public/images/menu-icon.png" alt="" className="menu-icon" onClick={toggleMenu}></img>        
         </nav>	
     );
 }
