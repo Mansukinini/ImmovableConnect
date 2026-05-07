@@ -1,10 +1,9 @@
 import React from "react";
-import HeroSection from "../hero/HeroSection";
+import HeroSection from "../Hero/HeroSection";
 import Title from "../Title/Title";
 import WhatWeDo from "../what-we-do/WhatWeDo";
 import AboutUs from "../about-us/AboutUs";
 import ContactUs from "../contact-us/ContactUs";
-import Footer from "../footer/Footer";
 
 export default function Landing() {
     return (
@@ -16,7 +15,7 @@ export default function Landing() {
             <AboutUs/>                
             <Title title='Contact us'/>
             <ContactUs/>
-            <Footer/>        
+            {/* <Footer/>         */}
         </section>
     );
 }
