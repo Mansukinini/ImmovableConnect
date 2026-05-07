@@ -31,7 +31,7 @@ router.post('/', [
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
-
+  console.log('Received login request:', req.body);
   const { email, password } = req.body;
   try {
     let user = await User.findOne({ email });

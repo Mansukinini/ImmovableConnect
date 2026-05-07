@@ -20,7 +20,7 @@ function ContactUs() {
     };
 
     return (
-        <div className='contact-us' style={{ maxWidth: '1100px', margin: '0 auto' }}>
+        <div className='contact-us'>
             <div className='contact-us-col'>
                 <h3>Send us a message</h3>
                 <p>Feel free to reach out through contact from or find our contact
@@ -34,9 +34,9 @@ function ContactUs() {
                         <li>+27 79 252 7725</li>
                         <li>Cape Town (Online)</li>
                     </ul>
-                </div>
-                </div>
-                <div className='contact-us-col'>
+                </div>                   
+            </div>
+            <div className='contact-us-col'>
                 <form className='contact-us-form' onSubmit={onSubmit} method="POST">
                     <label>Your name</label>
                     <input type="text" id="name" name="name" placeholder='Type your name...' required />

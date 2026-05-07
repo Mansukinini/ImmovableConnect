@@ -46,7 +46,8 @@ function AboutUs() {
     ];
 
     return (
-        <section style={{ maxWidth: '1100px', margin: '0 auto' }}>
+        <div id='about-us'> 
+            <div className='about-us-container'>
             {cardsData.map((card) => (
                 <div key={card.id} className="card">
                     <div className="card-header">
@@ -58,7 +59,8 @@ function AboutUs() {
                     </div>
                 </div>                    
             ))}
-        </section>
+        </div>
+        </div>        
     );
 }
 

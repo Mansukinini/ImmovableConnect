@@ -1,9 +1,11 @@
-.about-us-container {
+#about-us {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.what-we-are-right {
-    margin-bottom: 30px;
+.about-us-container {
+    display: inline-block;
 }
 
 .card-container {
@@ -19,6 +21,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: left;
     width: 324px;
     margin: 5px;
     padding: 10px;
@@ -35,6 +38,13 @@
 
 /* ---------------- media query ------------------------- */
 @media (max-width: 840px) {
+    .about-us-container>div {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .card {
         display: inline-block;
         flex-direction: column;

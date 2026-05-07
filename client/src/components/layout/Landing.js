@@ -4,17 +4,20 @@ import Title from "../Title/Title";
 import WhatWeDo from "../what-we-do/WhatWeDo";
 import AboutUs from "../about-us/AboutUs";
 import ContactUs from "../contact-us/ContactUs";
+import '../../app/App.css';
 
 export default function Landing() {
     return (
         <section className="landing">
             <HeroSection/>
-            <Title title='What we do'/>
-            <WhatWeDo/>
-            <Title title='About Us'/>
-            <AboutUs/>                
-            <Title title='Contact us'/>
-            <ContactUs/>
+            <div className="landing-container">
+                <Title title='What we do'/>
+                <WhatWeDo/>
+                <Title title='About Us'/>
+                <AboutUs/>                
+                <Title title='Contact us'/>
+                <ContactUs/>
+            </div>
             {/* <Footer/>         */}
         </section>
     );
