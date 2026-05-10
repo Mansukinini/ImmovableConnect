@@ -3,7 +3,7 @@ import './Title.css';
 
 function Title({ title }) {
   return (
-    <div className='title-container' style={{ maxWidth: '1100px', margin: '0 auto' }}>
+    <div className='title-container'>
       <h2 className='title'>{ title }</h2>
     </div>
   );

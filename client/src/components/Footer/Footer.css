@@ -134,6 +134,15 @@
     margin-bottom: 16px;
 }
 
+.footer-logo {
+    color: #fff;
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
 @media screen and (max-width: 820px) {
     .footer-links {
         padding-top: 2rem;
@@ -142,10 +151,6 @@
     .footer-input {
         width: 100%;
     }
-
-    /* .btn {
-        width: 100%;
-    } */
 
     .footer-link-wrapper {
         flex-direction: column;

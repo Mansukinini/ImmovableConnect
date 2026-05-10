@@ -1,33 +1,19 @@
 .what-we-do-container {
-    display: flex;
+    display: block;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 0 30px;
 }
 
-.what-we-do-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 40%;    
-    margin-right: 30px;
+.team-container {
+    margin: 0 30px;
 }
 
-.what-we-do-left > img {
-    height: 300px;
+.team-container .what-we-do-image{
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    position: relative;
-}
-
-.what-we-do-right {
-    margin: 0 20px;
-    flex-basis: 56%;
-}
-
-.weekly-meeting-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* ----------------- media query ----------------- */

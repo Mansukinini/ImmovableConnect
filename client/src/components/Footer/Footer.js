@@ -8,8 +8,7 @@ function Footer() {
             <section className='social-media'>
                 <div className='social-media-wrap'>
                     <div className='footer-logo'>
-                            Immovable Connect
-                        {/* </Link> */}
+                        Immovable Connect
                     </div>                    
                 </div>
             </section>

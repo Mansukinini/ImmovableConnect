@@ -52,7 +52,7 @@ export default function Navbar() {
                 </li>
                 <li>
                     <ScrollLink to="aboutUs" smooth={true} offset={-180} duration={500}>
-                        About us
+                        Departments
                     </ScrollLink>
                 </li>
                 <li>
@@ -62,7 +62,7 @@ export default function Navbar() {
                 </li>
                 <li>                    
                     <button className="btn">
-                        <RouterLink to="/login" >Login</RouterLink>
+                        <RouterLink to="/login">Login</RouterLink>
                     </button>
                 </li>
             </ul>

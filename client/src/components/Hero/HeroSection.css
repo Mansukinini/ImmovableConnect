@@ -9,7 +9,6 @@
     background: url('../../../public/images/img-home.jpg');
     /* background-repeat: no-repeat; */
     background-position: center;
-    /* color: #fff; */
 }
 
 .hero-text {
@@ -29,18 +28,7 @@
     color: #fff;
 }
 
-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
 .hero-container {
-    /* background: url('../../public/images/img-home.jpg') center center/cover no-repeat; */
     height: 100vh;
     width: 100%;
     display: flex;

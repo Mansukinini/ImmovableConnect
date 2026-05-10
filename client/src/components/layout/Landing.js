@@ -4,6 +4,7 @@ import Title from "../Title/Title";
 import WhatWeDo from "../what-we-do/WhatWeDo";
 import AboutUs from "../about-us/AboutUs";
 import ContactUs from "../contact-us/ContactUs";
+import Footer from "../footer/Footer";
 import '../../app/App.css';
 
 export default function Landing() {
@@ -13,12 +14,12 @@ export default function Landing() {
             <div className="landing-container">
                 <Title title='What we do'/>
                 <WhatWeDo/>
-                <Title title='About Us'/>
+                <Title title='Departments'/>
                 <AboutUs/>                
                 <Title title='Contact us'/>
                 <ContactUs/>
             </div>
-            {/* <Footer/>         */}
+            <Footer/>        
         </section>
     );
 }
