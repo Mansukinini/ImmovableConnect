@@ -4,7 +4,7 @@ import Title from "../Title/Title";
 import WhatWeDo from "../what-we-do/WhatWeDo";
 import AboutUs from "../about-us/AboutUs";
 import ContactUs from "../contact-us/ContactUs";
-import Footer from "../footer/Footer";
+import Footer from "../Footer/Footer";
 import '../../app/App.css';
 
 export default function Landing() {
