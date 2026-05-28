@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
     mode: process.env.NODE_ENV || "development",
@@ -17,16 +18,26 @@ module.exports = {
         new CopyPlugin({
             patterns: [{ from: "public", to: "public" }],
         }),
+        new webpack.DefinePlugin({
+            'process.env.WEB3FORMS_KEY': JSON.stringify(process.env.WEB3FORMS_KEY || ''),
+        }),
     ],
     resolve: {
         extensions: [".js", ".jsx"],
     },
     devServer: {
         static: {
-            directory: __dirname, // Serve static files from the root
+            directory: __dirname,
         },
         historyApiFallback: true,
         port: 8081,
+        proxy: [
+            {
+                context: ['/api'],
+                target: 'http://localhost:3000',
+                changeOrigin: true,
+            },
+        ],
     },
     module: {
         rules: [

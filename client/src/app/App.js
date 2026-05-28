@@ -1,9 +1,9 @@
 import React, { useEffect, Fragment } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Landing from "../components/layout/Landing";
 import Navbar from "../components/layout/Navbar";
-import Register from "../components/Auth/Register";
-import Login from "../components/Auth/Login";
+import Register from "../components/auth/Register";
+import Login from "../components/auth/Login";
 import Dashboard from "../components/dashboard/Dashboad";
 import Alert from "../components/layout/Alert";
 import { loadUser } from "../actions/auth";
@@ -18,37 +18,43 @@ if (localStorage.token) {
     setAuthToken(localStorage.token);
 }
 
+function PrivateRoute({ children }) {
+    const { isAuthenticated, loading } = store.getState().auth;
+    if (loading) return null;
+    return isAuthenticated ? children : <Navigate to="/login" />;
+}
+
 function AppContent() {
     const location = useLocation();
-
-    // Define paths where the element should be hidden
     const hideOnPaths = ['/login', '/register', '/dashboard'];
     return (
         <Fragment>
             {!hideOnPaths.includes(location.pathname) && <Navbar />}
-            <Alert/>
+            <Alert />
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/login" element={<Login />} />                            
-                <Route path="/dashboard" element={<Dashboard />} />                            
+                <Route path="/login" element={<Login />} />
+                <Route path="/dashboard" element={
+                    <PrivateRoute><Dashboard /></PrivateRoute>
+                } />
             </Routes>
         </Fragment>
     );
 }
 
 function App() {
-    // useEffect(() =>{
-    //     store.dispatch(loadUser());
-    // }, []);
+    useEffect(() => {
+        store.dispatch(loadUser());
+    }, []);
 
     return (
         <Provider store={store}>
             <BrowserRouter>
                 <AppContent />
-            </BrowserRouter>        
+            </BrowserRouter>
         </Provider>
-    );   
+    );
 }
 
 export default App;

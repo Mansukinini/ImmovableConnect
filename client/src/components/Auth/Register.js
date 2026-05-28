@@ -60,7 +60,7 @@ const Register = ({setAlert, register }) => {
         </section>
     );
 }
-Register.prototype = {
+Register.propTypes = {
     setAlert: PropTypes.func.isRequired,
     register: PropTypes.func.isRequired,
 }

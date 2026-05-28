@@ -10,14 +10,14 @@ import userRoutes from '../routes/api/user.js';
 connectDB();
 
 const app = express();
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: process.env.CLIENT_URL || '*' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/auth', authRoutes);
-app.use('/profile', profileRoutes);
-app.use('/posts', postsRoutes);
-app.use('/user', userRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/profile', profileRoutes);
+app.use('/api/posts', postsRoutes);
+app.use('/api/user', userRoutes);
 
 export default app;
