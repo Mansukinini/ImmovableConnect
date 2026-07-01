@@ -1,0 +1,210 @@
+/* Collapsible dashboard sidebar */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 280px;
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: #212529;
+    color: #fff;
+    overflow: hidden;
+    transition: width 0.2s ease;
+}
+
+.sidebar.collapsed {
+    width: 72px;
+    padding: 1rem 0.6rem;
+}
+
+/* Header: hamburger + brand */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background: transparent;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.sidebar-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar-brand-logo {
+    width: 36px;
+    height: 36px;
+    margin-right: 0.6rem;
+    border-radius: 0.4rem;
+    object-fit: cover;
+}
+
+.sidebar-brand-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+/* Hide the brand entirely when collapsed; only the hamburger remains */
+.sidebar.collapsed .sidebar-toggle {
+    margin-right: 0;
+}
+
+.sidebar.collapsed .sidebar-brand {
+    display: none;
+}
+
+.sidebar-divider {
+    height: 0;
+    margin: 0.75rem 0;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Navigation */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    background: transparent;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.sidebar-nav-link i {
+    width: 1.4rem;
+    margin-right: 0.85rem;
+    font-size: 1.05rem;
+    text-align: center;
+}
+
+.sidebar-nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav-link.active {
+    color: #fff;
+    background-color: #0d6efd;
+}
+
+.sidebar-nav-link.active:hover {
+    background-color: #0d6efd;
+}
+
+/* Collapsed: center icons, hide labels */
+.sidebar.collapsed .sidebar-nav-link {
+    justify-content: center;
+    padding: 0.6rem 0;
+}
+
+.sidebar.collapsed .sidebar-nav-link i {
+    margin-right: 0;
+}
+
+.sidebar.collapsed .sidebar-nav-label {
+    display: none;
+}
+
+/* Profile footer */
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0.25rem;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar-profile-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar-profile-icon {
+    font-size: 32px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.sidebar-profile-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0;
+    margin-left: 0.6rem;
+}
+
+.sidebar-profile-name {
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar-profile-email {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar-profile .fa-chevron-down {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Collapsed: only the avatar, centered */
+.sidebar.collapsed .sidebar-profile {
+    justify-content: center;
+    padding: 0.4rem 0;
+}
+
+.sidebar.collapsed .sidebar-profile-info,
+.sidebar.collapsed .sidebar-profile .fa-chevron-down {
+    display: none;
+}
