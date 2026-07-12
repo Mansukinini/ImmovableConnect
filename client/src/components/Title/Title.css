@@ -1,15 +1,56 @@
 .title-container {
-    text-align: center;
-    color: #212EA0;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin: 25px 0 30px;
+    margin: 0 0 34px;
 }
 
-.title-container h2 {
-    font-size: 32px;
-    color: #000f38;
-    margin-top: 5px;
-    text-transform: none;
+.title-container.center {
+    text-align: center;
+}
+
+.title-container.left {
+    text-align: left;
+}
+
+.title-eyebrow {
+    display: inline-block;
+    font-family: var(--font-head);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sf-green-dark);
+    margin-bottom: 12px;
+}
+
+.title-container .title {
+    font-family: var(--font-head);
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--sf-ink);
+    line-height: 1.15;
+}
+
+/* Accent underline under centered titles */
+.title-container.center .title::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin: 16px auto 0;
+    background: var(--sf-green);
+    border-radius: 2px;
+}
+
+/* On green / dark blocks */
+.title-container.on-dark .title {
+    color: #fff;
+}
+
+.title-container.on-dark .title-eyebrow {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 650px) {
+    .title-container .title {
+        font-size: 30px;
+    }
 }
